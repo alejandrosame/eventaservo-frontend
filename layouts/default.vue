@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="es-body">
     <v-navigation-drawer
       v-model="drawer"
       :clipped="$vuetify.breakpoint.lgAndUp"
@@ -54,7 +54,7 @@
       dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
+      <v-toolbar-title style="width: 300px;" class="ml-0 pl-4">
         <span class="hidden-sm-and-down">Eventa Servo</span>
       </v-toolbar-title>
       <v-text-field
@@ -82,7 +82,7 @@
       </v-btn>
     </v-app-bar>
     <v-content>
-      <v-container class="fill-height" fluid>
+      <v-container style="background-color: white;">
         <nuxt />
       </v-container>
     </v-content>
@@ -104,10 +104,14 @@
 <script>
 export default {
   props: {
-    source: String
+    source: String,
   },
   data: () => ({
-    drawer: null
-  })
+    drawer: false,
+  }),
 }
 </script>
+<style lang="sass">
+#es-body
+  background-color: #F7F7F7
+</style>

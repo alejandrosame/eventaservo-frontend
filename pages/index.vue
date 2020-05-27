@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <div class="d-flex flex-wrap">
-      <event-karto
-        v-for="evento in eventoj"
-        :key="evento.uuid"
-        :evento="evento"
-      ></event-karto>
-    </div>
+  <div class="d-flex flex-wrap justify-center">
+    <event-karto
+      v-for="evento in eventoj"
+      :key="evento.uuid"
+      :evento="evento"
+    ></event-karto>
   </div>
 </template>
 
@@ -15,18 +13,17 @@ import EventKarto from '~/components/EventKarto'
 
 export default {
   components: {
-    EventKarto
+    EventKarto,
   },
   data() {
     return {
-      eventoj: []
+      eventoj: [],
     }
   },
-  mounted() {
-    console.log('MOUNTED')
-    this.$axios.$get('eventoj.json').then(response => {
+  async mounted() {
+    await this.$axios.$get('eventoj').then((response) => {
       this.eventoj = response
     })
-  }
+  },
 }
 </script>
