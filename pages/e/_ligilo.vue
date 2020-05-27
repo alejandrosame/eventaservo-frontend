@@ -1,22 +1,37 @@
 <template>
   <div>
-    <div class="title">
-      <flag :code="this.evento.flagoKodo" />
+    <v-row>
+      <v-col lg="9">
+        <div>
+          <div class="title">
+            <flag :code="this.evento.flagoKodo" />
 
-      {{ this.evento.titolo }}
-    </div>
-    <div class="subtitle-1">
-      {{ this.evento.priskribo }}
-    </div>
-    <div class="">{{ this.evento.enhavo }}</div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <hr />
-    <v-btn small text color="primary" nuxt to="/">
-      Voltar
-    </v-btn>
+            {{ this.evento.titolo }}
+          </div>
+          <div class="subtitle-1">
+            {{ this.evento.priskribo }}
+          </div>
+          <br />
+          <!--    <form>-->
+          <!--      <input id="x" :value="this.evento.enhavo" type="hidden" />-->
+          <!--      <trix-editor class="trix-content" input="x"></trix-editor>-->
+          <!--    </form>-->
+
+          <div class="trix-content">
+            <p v-html="this.evento.enhavo"></p>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <hr />
+          <v-btn small text color="primary" nuxt to="/">
+            Voltar
+          </v-btn>
+        </div>
+      </v-col>
+      <v-col lg="3">Outra coluna</v-col>
+    </v-row>
   </div>
 </template>
 
