@@ -1,6 +1,8 @@
 <template>
   <div>
     <div class="title">
+      <flag :code="this.evento.flagoKodo" />
+
       {{ this.evento.titolo }}
     </div>
     <div class="subtitle-1">
@@ -19,8 +21,10 @@
 </template>
 
 <script>
+import Flag from '~/components/Flag'
 export default {
   name: 'index',
+  components: { Flag },
   data() {
     return {
       evento: {},
