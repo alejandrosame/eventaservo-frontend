@@ -55,7 +55,9 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title style="width: 300px;" class="ml-0 pl-4">
-        <span class="hidden-sm-and-down">Eventa Servo</span>
+        <nuxt-link to="/" class="link--white">
+          <span class="hidden-sm-and-down">Eventa Servo</span>
+        </nuxt-link>
       </v-toolbar-title>
       <v-text-field
         flat
@@ -82,7 +84,7 @@
       </v-btn>
     </v-app-bar>
     <v-content>
-      <v-container style="background-color: white;">
+      <v-container>
         <nuxt />
       </v-container>
     </v-content>
@@ -114,4 +116,8 @@ export default {
 <style lang="sass">
 #es-body
   background-color: #F7F7F7
+
+.link--white
+  color: white !important
+  text-decoration: none
 </style>

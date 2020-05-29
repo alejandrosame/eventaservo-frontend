@@ -7,11 +7,7 @@
       </div>
     </v-card-title>
     <v-card-subtitle>{{ this.evento.urbo }}</v-card-subtitle>
-    <v-card-text>
-      Bandeira: {{ this.evento.flagoKodo }}
-      <br />
-      {{ this.evento.priskribo }}</v-card-text
-    >
+    <v-card-text> {{ this.evento.priskribo }}</v-card-text>
     <v-card-actions>
       <v-spacer />
       <v-btn small color="primary" text nuxt :to="'/e/' + this.evento.ligilo"
