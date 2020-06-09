@@ -33,7 +33,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~assets/box-white.sass', 'trix/dist/trix.css'],
+  css: ['~assets/links.sass', '~assets/box-white.sass', 'trix/dist/trix.css'],
   /*
    ** Plugins to load before mounting the App
    */

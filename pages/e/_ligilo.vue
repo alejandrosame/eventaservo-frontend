@@ -36,13 +36,15 @@
         <v-card>
           <v-card-title>Informoj</v-card-title>
           <v-card-text>
-            <span class="d-inline-block text-truncate" style="max-width: 20em;">
-              <v-icon small>mdi-earth</v-icon>
-              {{ this.evento.retejo }}</span
-            >
+            <es-retejo :url="this.evento.retejo" />
             <br />
-            <v-icon small>mdi-at</v-icon>
-            {{ this.evento.retposhtadreso }}
+            <es-retposhtadreso :retposhtadreso="this.evento.retposhtadreso" />
+            <br />
+            <es-google-maps-ligilo
+              :plena-adreso="this.evento.plenaAdreso"
+              :strato="this.evento.strato"
+            />
+            <br />
           </v-card-text>
         </v-card>
       </v-col>
@@ -52,9 +54,12 @@
 
 <script>
 import Flag from '~/components/Flag'
+import EsGoogleMapsLigilo from '~/components/ligiloj/es-google-maps-ligilo'
+import EsRetposhtadreso from '~/components/ligiloj/es-retposhtadreso'
+import EsRetejo from '~/components/ligiloj/es-retejo'
 export default {
   name: 'index',
-  components: { Flag },
+  components: { EsRetejo, EsRetposhtadreso, EsGoogleMapsLigilo, Flag },
   data() {
     return {
       evento: {},
