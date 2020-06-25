@@ -14,7 +14,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Eventa Servo',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -47,6 +47,7 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/auth',
     '@nuxtjs/axios',
     '@nuxtjs/vuetify',
     '@nuxtjs/dotenv',
@@ -72,5 +73,16 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {},
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/login', method: 'post', propertyName: 'token' },
+          logout: { url: '/logout', method: 'delete' },
+          user: { url: '/uzanto', method: 'get', propertyName: 'uzanto' },
+        },
+      },
+    },
   },
 }
