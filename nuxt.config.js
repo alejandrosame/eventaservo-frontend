@@ -1,4 +1,3 @@
-require('dotenv').config()
 import path from 'path'
 import fs from 'fs'
 
@@ -10,6 +9,10 @@ export default {
       cert: fs.readFileSync(path.resolve(__dirname, 'server.crt')),
     },
   },
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL,
+  },
+  privateRuntimeConfig: {},
   /*
    ** Headers of the page
    */
@@ -57,7 +60,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: process.env.API_URL,
+    baseURL: process.env.BASE_URL,
     headers: {
       common: {
         Authorization: process.env.API_CODE,

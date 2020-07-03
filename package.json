@@ -15,14 +15,18 @@
     "@nuxtjs/axios": "^5.11.0",
     "flag-icon-css": "^3.5.0",
     "npm-check-updates": "^7.0.1",
-    "nuxt": "^2.13.1",
+    "nuxt": "^2.13.3",
     "trix": "^1.2.3"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/vuetify": "^1.11.2",
+    "eslint": "^7.3.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0"
   }
 }
