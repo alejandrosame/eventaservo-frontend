@@ -10,7 +10,13 @@ COPY yarn.lock /eventaservo/
 COPY package.json /eventaservo/
 RUN yarn install
 
-WORKDIR /eventaservo
+COPY . /eventaservo/
 
-CMD ["yarn", "dev"]
+RUN yarn run build
+
+EXPOSE 3001
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=3001
+
+CMD ["yarn", "start"]
 
