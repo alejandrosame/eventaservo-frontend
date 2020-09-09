@@ -22,11 +22,11 @@
             <p v-html="this.evento.enhavo"></p>
           </v-card-text>
           <v-card-actions>
-            <v-btn small text color="orange">Raporti</v-btn>
-            <v-btn small text color="red">Nuligi</v-btn>
+            <v-btn small text color="orange" disabled>Raporti</v-btn>
+            <v-btn small text color="red" disabled>Nuligi</v-btn>
             <v-spacer></v-spacer>
-            <v-btn small text color="green">Duobligi</v-btn>
-            <v-btn small text color="primary" nuxt to="/"> Voltar </v-btn>
+            <v-btn small text color="green" disabled>Duobligi</v-btn>
+            <v-btn small text color="primary" nuxt to="/">REVENI</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
