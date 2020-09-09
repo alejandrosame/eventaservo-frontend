@@ -14,9 +14,9 @@ COPY . /eventaservo/
 
 RUN yarn run build
 
-EXPOSE 3001
+EXPOSE 3002
 ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3001
+ENV NUXT_PORT=3002
 
 CMD ["yarn", "start"]
 
