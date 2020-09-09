@@ -21,6 +21,7 @@ export default {
     }
   },
   async mounted() {
+    this.$axios.setToken(process.env.API_CODE)
     await this.$axios.$get('eventoj').then((response) => {
       this.eventoj = response
     })

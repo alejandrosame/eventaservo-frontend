@@ -61,11 +61,11 @@ export default {
    */
   axios: {
     baseURL: process.env.BASE_URL,
-    headers: {
-      common: {
-        Authorization: process.env.API_CODE,
-      },
-    },
+    // headers: {
+    //   common: {
+    //     Authorization: `Bearer ${process.env.API_CODE}`,
+    //   },
+    // },
   },
   vuetify: {},
   /*

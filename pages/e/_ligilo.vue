@@ -13,7 +13,7 @@
           <v-card-subtitle>
             {{ this.evento.priskribo }}
           </v-card-subtitle>
-          <v-card-text class="trix-content" style="color: black;">
+          <v-card-text class="trix-content" style="color: black">
             <!--    <form>-->
             <!--      <input id="x" :value="this.evento.enhavo" type="hidden" />-->
             <!--      <trix-editor class="trix-content" input="x"></trix-editor>-->
@@ -26,9 +26,7 @@
             <v-btn small text color="red">Nuligi</v-btn>
             <v-spacer></v-spacer>
             <v-btn small text color="green">Duobligi</v-btn>
-            <v-btn small text color="primary" nuxt to="/">
-              Voltar
-            </v-btn>
+            <v-btn small text color="primary" nuxt to="/"> Voltar </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -40,10 +38,7 @@
             <br />
             <es-retposhtadreso :retposhtadreso="this.evento.retposhtadreso" />
             <br />
-            <es-google-maps-ligilo
-              :plena-adreso="this.evento.plenaAdreso"
-              :strato="this.evento.strato"
-            />
+            <es-google-maps-ligilo :plena-adreso="this.evento.plenaAdreso" :strato="this.evento.strato" />
             <br />
           </v-card-text>
         </v-card>
@@ -66,11 +61,10 @@ export default {
     }
   },
   async mounted() {
-    await this.$axios
-      .$get('eventoj/e/' + this.$route.params.ligilo)
-      .then((response) => {
-        this.evento = response
-      })
+    this.$axios.setToken(process.env.API_CODE)
+    await this.$axios.$get('eventoj/e/' + this.$route.params.ligilo).then((response) => {
+      this.evento = response
+    })
   },
 }
 </script>
