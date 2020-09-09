@@ -4,14 +4,25 @@
 
 > Fasado de Eventa Servo
 
+Vi bezonos instali la "backend" servilon por redakti la API-ojn. Tamen, vi povas
+uzi Staging-Servilon (https://staging.eventaservo.org) se vi volas nur programi
+la fasadon.
+
 ## Por uzi en via komputilo, sen Docker
 
+Kopiu kaj redaktu ```.env``` dosieron
 ```bash
+$ cp .env.ekzemplo .env
+```
+
+Uzu ```yarn``` por startigi la servilon. 
+```
 $ yarn install
 $ yarn dev
 ```
 
 ## Per Docker
 
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+```
+docker-compose up --build
+```
